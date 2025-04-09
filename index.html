@@ -590,12 +590,37 @@ header {
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
+    gap: 0.8rem; /* Espaço entre o ícone e o texto */
 }
 
 .guarantee i {
-    font-size: 2rem;
-    margin-right: 1rem;
+    font-size: 1.8rem; /* Tamanho um pouco menor que antes */
     color: #ffd700;
+    flex-shrink: 0; /* Impede que o ícone diminua */
+}
+
+.guarantee p {
+    margin: 0; /* Remove a margem padrão do parágrafo */
+    font-size: 1rem; /* Ajuste do tamanho do texto */
+    line-height: 1.4; /* Melhora a legibilidade */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .guarantee {
+        flex-direction: row; /* Mantém ícone e texto na mesma linha */
+        text-align: left;
+        justify-content: center;
+        gap: 0.6rem;
+    }
+    
+    .guarantee i {
+        font-size: 1.5rem;
+    }
+    
+    .guarantee p {
+        font-size: 0.9rem;
+    }
 }
 
 .contact-info {
@@ -1090,6 +1115,15 @@ footer {
             });
         });
         
+        document.addEventListener('keydown', function(e) {
+  if (e.key === 'F12' || 
+      (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+      (e.ctrlKey && e.key === 'U')) {
+    e.preventDefault();
+  }
+});
+        
         // WhatsApp Button Animation
         const whatsappBtn = document.querySelector('.whatsapp-btn');
         whatsappBtn.addEventListener('mouseenter', function() {
@@ -1099,6 +1133,10 @@ footer {
         whatsappBtn.addEventListener('mouseleave', function() {
             this.style.transform = 'scale(1)';
         });
+        
+        document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
     </script>
 </body>
 </html>
