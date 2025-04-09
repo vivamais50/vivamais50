@@ -640,6 +640,28 @@ footer {
         padding: 3rem 0;
     }
 }
+
+/* Adicione estas regras CSS ao seu estilo existente */
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* Proporção 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    
+
     </style>
 </head>
 <body>
@@ -766,22 +788,22 @@ footer {
         </div>
     </section>
 
-    <!-- Video Section -->
-    <section id="video" class="video-section">
-        <div class="container">
-            <h2>Assista a Fernanda D'Giorno explicando o poder do Método VIVA 50+</h2>
-            <p>Descubra por que milhares de mulheres estão transformando suas vidas após os 50</p>
-            
-            <div class="video-container">
-                <div class="video-thumbnail" id="videoThumbnail">
-                    <img src="video.mp4" alt="Vídeo sobre o Método VIVA 50+">
-                    <div class="play-button">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
+    <!-- Video Section - Modificada para YouTube -->
+<section id="video" class="video-section">
+    <div class="container">
+        <h2>Assista a Fernanda D'Giorno explicando o poder do Método VIVA 50+</h2>
+        <p>Descubra por que milhares de mulheres estão transformando suas vidas após os 50</p>
+        
+        <div class="video-container">
+            <div class="video-wrapper">
+                <!-- Substitua YOUR_VIDEO_ID pelo ID do vídeo do YouTube -->
+                <iframe id="youtube-video" src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="section testimonials">
@@ -898,11 +920,7 @@ footer {
     </footer>
 
     <script>
-        // Video Play Functionality
-        document.getElementById('videoThumbnail').addEventListener('click', function() {
-            // In a real implementation, this would replace the thumbnail with an embedded video
-            alert('Aqui seria incorporado o vídeo de apresentação do Método VIVA 50+');
-        });
+        
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
