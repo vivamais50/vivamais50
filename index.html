@@ -783,9 +783,9 @@ footer {
     
 
     <!-- Header -->
-    <header>
+    <header id="home">
         <div class="container header-container">
-            <a href="#" class="logo">VIVA <span>50+</span></a>
+            <a href="#home" class="logo">VIVA <span>50+</span></a>
             
             <div class="buy-btn-container">
                 <a href="#cta" class="btn buy-btn">COMPRAR AGORA</a>
@@ -1136,7 +1136,11 @@ footer {
             });
         });
         
-        document.addEventListener('keydown', function(e) {
+       document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+document.addEventListener('keydown', function(e) {
   if (e.key === 'F12' || 
       (e.ctrlKey && e.shiftKey && e.key === 'I') || 
       (e.ctrlKey && e.shiftKey && e.key === 'J') ||
@@ -1144,8 +1148,6 @@ footer {
     e.preventDefault();
   }
 });
-        
-      
     </script>
 </body>
 </html>
